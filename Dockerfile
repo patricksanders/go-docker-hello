@@ -9,7 +9,5 @@ ENV GOOS=linux
 RUN go build -a -v --ldflags '-extldflags "-static"' -o /program .
 
 FROM scratch
-ARG username
-ARG package_name
 COPY --from=golang-build /program /
 ENTRYPOINT ["/program"]
