@@ -20,7 +20,9 @@ build: test
 		--build-arg repo_name=${REPO_NAME} \
 		.
 	docker tag ${TRAVIS_REPO_SLUG} ${DOCKER_TAG}
-	docker rmi ${TRAVIS_REPO_SLUG}:latest
+ifneq ("$(GOLANG_VERSION)", "latest")
+	docker rmi ${TRAVIS_REPO_SLUG}:latest;
+endif
 
 run:
 	docker run -it --rm ${DOCKER_TAG}
