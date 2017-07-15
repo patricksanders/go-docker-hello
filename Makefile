@@ -3,7 +3,8 @@
 GOLANG_VERSION ?= 1.8
 USERNAME ?= patricksanders
 REPO_NAME ?= go-docker-hello
-DOCKER_TAG := ${USERNAME}/${REPO_NAME}:go-${GOLANG_VERSION}
+TRAVIS_REPO_SLUG ?= ${USERNAME}/${REPO_NAME}
+DOCKER_TAG := ${TRAVIS_REPO_SLUG}:go-${GOLANG_VERSION}
 
 test:
 	docker run --rm \
