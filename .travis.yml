@@ -19,7 +19,6 @@ jobs:
       script: make build
 
 after_success:
-  - echo $TRAVIS_BRANCH
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push patricksanders/go-docker-hello;

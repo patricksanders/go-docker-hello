@@ -2,7 +2,8 @@
 
 GOLANG_VERSION ?= 1.8
 USERNAME ?= patricksanders
-PACKAGE_NAME ?= hello
+PACKAGE_NAME ?= go-docker-hello
+DOCKER_TAG := ${USERNAME}/${PACKAGE_NAME}:go-${GOLANG_VERSION}
 
 build:
 	docker build -t ${USERNAME}/${PACKAGE_NAME} \
@@ -10,6 +11,7 @@ build:
 		--build-arg username=${USERNAME} \
 		--build-arg package_name=${PACKAGE_NAME} \
 		.
+	docker tag ${USERNAME}/${PACKAGE_NAME} ${DOCKER_TAG}
 
 run:
-	docker run -it --rm ${USERNAME}/${PACKAGE_NAME}
+	docker run -it --rm ${DOCKER_TAG}
