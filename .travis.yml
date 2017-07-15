@@ -8,9 +8,18 @@ services:
 before_install:
   - sudo apt-get update
   - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
-  - make build
+
+env:
+  - GOLANG_VERSION=1.8
+  - GOLANG_VERSION=latest
+  - GOLANG_VERSION=rc
+jobs:
+  include:
+    - stage: build
+      script: make build
 
 after_success:
+  - echo $TRAVIS_BRANCH
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push patricksanders/go-docker-hello;
