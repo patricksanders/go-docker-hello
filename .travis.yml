@@ -13,7 +13,7 @@ env:
   - GOLANG_VERSION=1.8
   - GOLANG_VERSION=latest
   - GOLANG_VERSION=rc
-jobs:
+matrix:
   include:
     - stage: build
       script: make build
