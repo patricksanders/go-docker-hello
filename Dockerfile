@@ -6,7 +6,7 @@ COPY . /go/src/github.com/${username}/${package_name}
 WORKDIR /go/src/github.com/${username}/${package_name}
 ENV CGO_ENABLED=0
 ENV GOOS=linux
-RUN go build -a -v --ldflags '-extldflags "-static"' -o /program .
+RUN go build -a -v --ldflags '-extldflags "-static"' -tags netgo -installsuffix netgo -o /program .
 
 FROM scratch
 COPY --from=golang-build /program /
