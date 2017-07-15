@@ -22,5 +22,5 @@ script: make build
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push patricksanders/go-docker-hello;
+    docker push $TRAVIS_REPO_SLUG:$GOLANG_VERSION;
     fi

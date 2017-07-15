@@ -1,9 +1,9 @@
 ARG GOLANG_VERSION=1.8
 FROM golang:${GOLANG_VERSION} as golang-build
 ARG username
-ARG package_name
-COPY . /go/src/github.com/${username}/${package_name}
-WORKDIR /go/src/github.com/${username}/${package_name}
+ARG repo_name
+COPY . /go/src/github.com/${username}/${repo_name}
+WORKDIR /go/src/github.com/${username}/${repo_name}
 ENV CGO_ENABLED=0
 ENV GOOS=linux
 RUN go build -a -v --ldflags '-extldflags "-static"' -tags netgo -installsuffix netgo -o /program .
