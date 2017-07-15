@@ -13,10 +13,8 @@ env:
   - GOLANG_VERSION=1.8
   - GOLANG_VERSION=latest
   - GOLANG_VERSION=rc
-matrix:
-  include:
-    - stage: build
-      script: make build
+
+script: make build
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
