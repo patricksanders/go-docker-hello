@@ -1,4 +1,4 @@
-ARG GOLANG_VERSION=1.8
+ARG GOLANG_VERSION=1.9
 FROM golang:${GOLANG_VERSION} as golang-build
 ARG username
 ARG repo_name
