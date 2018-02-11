@@ -1,0 +1,12 @@
+[submodule "vendor/github.com/inconshreveable/log15"]
+	path = vendor/github.com/inconshreveable/log15
+	url = https://github.com/inconshreveable/log15
+[submodule "vendor/github.com/go-stack/stack"]
+	path = vendor/github.com/go-stack/stack
+	url = https://github.com/go-stack/stack
+[submodule "vendor/github.com/mattn/go-colorable"]
+	path = vendor/github.com/mattn/go-colorable
+	url = https://github.com/mattn/go-colorable
+[submodule "vendor/github.com/mattn/go-isatty"]
+	path = vendor/github.com/mattn/go-isatty
+	url = https://github.com/mattn/go-isatty

@@ -1,9 +1,9 @@
 package main
 
-import "fmt"
+import log "github.com/inconshreveable/log15"
 
 func main() {
-	fmt.Println("hello world")
+	log.Info("hello world")
 }
 
 func add(a int, b int) int {
