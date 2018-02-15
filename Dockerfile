@@ -9,5 +9,7 @@ ENV GOOS=linux
 RUN go build -a -v --ldflags '-extldflags "-static"' -tags netgo -installsuffix netgo -o /program .
 
 FROM scratch
+ARG GOLANG_VERSION
+ENV GOLANG_VERSION=${GOLANG_VERSION}
 COPY --from=golang-build /program /
 ENTRYPOINT ["/program"]
