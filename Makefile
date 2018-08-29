@@ -1,6 +1,6 @@
 .PHONY: test build run
 
-GOLANG_VERSION ?= 1.10
+GOLANG_VERSION ?= 1.11
 USERNAME ?= patricksanders
 REPO_NAME ?= go-docker-hello
 TRAVIS_REPO_SLUG ?= ${USERNAME}/${REPO_NAME}

@@ -14,6 +14,7 @@ env:
   - GOLANG_VERSION=1.8
   - GOLANG_VERSION=1.9
   - GOLANG_VERSION=1.10
+  - GOLANG_VERSION=1.11
   - GOLANG_VERSION=latest
 
 script: make build
